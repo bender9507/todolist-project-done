@@ -1,8 +1,11 @@
-const List = ({todos, clickCompleteButtonHandler, clickRemoveButtonHandler}) => {
-
-    return (
-  
-      <div className="list-container">
+const List = ({
+  todos,
+  clickEditButtonHandler,
+  clickCompleteButtonHandler,
+  clickRemoveButtonHandler,
+}) => {
+  return (
+    <div className="list-container">
       <h2 className="list-title">working</h2>
       <div className="list-wrapper">
         {todos.map(function (item) {
@@ -10,22 +13,22 @@ const List = ({todos, clickCompleteButtonHandler, clickRemoveButtonHandler}) => 
             return (
               <div key={item.id} className="todo-container">
                 <div className="todo-list">{item.text}</div>
+
                 <div className="button-set">
-                  {/* <button
+                  <button
                     type="button"
                     className="todo-edit-button"
                     onClick={() => clickEditButtonHandler(item.id)}
                   >
                     ✐
-                  </button> */}
+                  </button>
                   <button
                     className="todo-complete-button"
                     onClick={() => clickCompleteButtonHandler(item.id)}
                   >
                     ☑️
-                    {/* {item.isDone ? "X" : "☑️"} */}
                   </button>
-  
+
                   <button
                     className="todo-delete-button"
                     onClick={() => clickRemoveButtonHandler(item.id)}
@@ -44,20 +47,13 @@ const List = ({todos, clickCompleteButtonHandler, clickRemoveButtonHandler}) => 
             return (
               <div key={item.id} className="todo-container">
                 <div className="todo-list">{item.text}</div>
-  
+
                 <div className="button-set">
-                  {/* <button
-                    type="button"
-                    className="todo-edit-button"
-                    onClick={() => clickEditButtonHandler(item.id)}
-                  >
-                    ✐
-                  </button> */}
                   <button
                     className="todo-complete-button"
                     onClick={() => clickCompleteButtonHandler(item.id)}
                   >
-                    X{/* {item.isDone ? "X" : "☑️"} */}
+                    X
                   </button>
                   <button
                     className="todo-delete-button"
@@ -71,6 +67,6 @@ const List = ({todos, clickCompleteButtonHandler, clickRemoveButtonHandler}) => 
         })}
       </div>
     </div>
-    )
-  }
-  export default List;
+  );
+};
+export default List;
