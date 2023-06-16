@@ -18,10 +18,7 @@
   text-align: center;
   margin: auto;
 }
-/* .layout-box {
-  display: block;
-  margin: 0 auto;
-} */
+
 .container {
   font-family: "Cafe24Ssurround";
   display: inline-block;
@@ -74,7 +71,6 @@
 }
 
 .list-container {
-  /* padding: 0 24px; */
   padding-bottom: 50px;
   justify-content: center;
 }
@@ -90,7 +86,6 @@
   width: 370px;
   height: 35px;
   border-bottom: 2px solid gray;
-  /* border-radius: 12px; */
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -118,10 +113,8 @@ h3 {
 .button-set {
   display: flex;
   gap: 5px;
-  /* margin-top: 24px; */
 }
 button {
-  /* border-radius: 8px; */
   border: none;
   cursor: pointer;
   height: 30px;
@@ -131,15 +124,11 @@ button {
   background-color: transparent;
   display: flex;
   font-size: 1.5em;
-
-  /* border: 2px solid red; */
 }
 .todo-complete-button {
   background-color: transparent;
   display: flex;
   font-size: 1.5em;
-
-  /* border: 2px solid green; */
 }
 .todo-edit-button {
   background-color: transparent;

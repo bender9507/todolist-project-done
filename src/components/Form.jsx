@@ -6,9 +6,9 @@ function Form({ todos, setTodos }) {
   const onChangeHandler = (event) => {
     setText(event.target.value);
   };
-  //추가 버큰 클릭
+  //추가 버튼 클릭
   const onSubmitButtonHandler = (e) => {
-    e.preventDefault(); //form의 새로고침 방지, 왜 e를 붙여야 할까, 함수의 event객체다
+    e.preventDefault();
 
     const newTodo = {
       id: todos.length,
@@ -16,10 +16,10 @@ function Form({ todos, setTodos }) {
       isDone: false,
     };
     console.log(newTodo);
-    setText(""); //value 초기화
+    setText("");
     setTodos([...todos, newTodo]);
   };
-  // console.log(setTodos);
+
   return (
     <form className="add-form" onSubmit={onSubmitButtonHandler}>
       <div className="input-group">
