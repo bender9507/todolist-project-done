@@ -1,4 +1,5 @@
 import { useState } from "react";
+import uuid from "react-uuid";
 
 function Form({ todos, setTodos }) {
   const [text, setText] = useState("");
@@ -11,7 +12,7 @@ function Form({ todos, setTodos }) {
     e.preventDefault();
 
     const newTodo = {
-      id: todos.length,
+      id: uuid(),
       text,
       isDone: false,
     };
