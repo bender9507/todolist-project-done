@@ -1,14 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+// import GlobalStyle from "./styles/global/GlobalStyle";
+// import GlobalFonts from "./styles/fonts";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// 우리가 추가할 코드
+import { Provider } from "react-redux";
+import store, { persistor } from "./redux/config/configStore";
+
+import { PersistGate } from "redux-persist/integration/react";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  //App을 Provider로 감싸주고, configStore에서 export default 한 store를 넣어줍니다.
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      {/* <GlobalFonts />
+      <GlobalStyle /> */}
+      <App />
+    </PersistGate>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
