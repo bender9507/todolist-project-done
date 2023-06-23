@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import uuid from "react-uuid";
@@ -53,6 +55,12 @@ const Addbutton = styled.button`
 `;
 
 function Form() {
+  const inputRef = useRef("");
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
   const [text, setText] = useState("");
 
   const dispatch = useDispatch(); // dispatch 생성
@@ -85,6 +93,7 @@ function Form() {
           onChange={onChangeHandler}
           maxLength="22"
           required
+          ref={inputRef}
         />
         <Addbutton className="add-button">ADD</Addbutton>
       </Inputgroup>
